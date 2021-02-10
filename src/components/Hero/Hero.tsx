@@ -4,15 +4,16 @@ import HeroImage from "../../static/images/ben-kolde-xdLXPic3Wfk-unsplash.jpg";
 
 const StyledHero = styled.div`
   width: 100%;
-  height: 800px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
   img {
-    object-fit: cover;
+    height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -25,6 +26,10 @@ const StyledOverlay = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+`;
+
+const StyledHeroText = styled.h1`
+  font-size: 4rem;
 `;
 
 const StyledHeroMotion = motion.custom(StyledHero);
@@ -42,7 +47,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
       >
-        <motion.h1>Hello</motion.h1>
+        <StyledHeroText>Hello</StyledHeroText>
       </StyledOverlayMotion>
 
       <img src={HeroImage} alt="Hero" />
